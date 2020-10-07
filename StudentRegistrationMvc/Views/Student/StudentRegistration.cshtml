@@ -1,0 +1,62 @@
+﻿@model StudentRegistrationMvc.Models.Student
+@{
+    ViewBag.Title = "StudentRegistration";
+}
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    @*<h2>Student Registration</h2>
+    <form>
+        <div class="form-group">
+
+            <label for="exampleName">Name</label>
+            <input type="text" class="form-control" id="" placeholder="Enter Your Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleMaths">Maths</label>
+            <input type="text" class="form-control" id="" placeholder="Enter Your Mark">
+        </div>
+        <div class="form-group">
+            <label for="exampleChemistry">Chemistry</label>
+            <input type="text" class="form-control" id="" placeholder="Enter Your Mark">
+        </div>
+        <div class="form-group">
+            <label for="examplePhysics">Physics</label>
+            <input type="text" class="form-control" id="" placeholder="Enter Your Mark">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="" placeholder="Enter Your Phone Number">
+        </div>
+        <div class="form-group">
+            <label for="phone">Email</label>
+            <input type="email" class="form-control" id="" placeholder="Enter Your Email Id">
+        </div>
+        <div class="form-group">
+            <label for="phone">Address</label>
+            <input type="text" class="form-control" id="" placeholder="Enter Your Address">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info"> SAVE</button>
+            </div>
+    </form>*@
+@using (Html.BeginForm("StudentRegistration", "Student", FormMethod.Post, new { enctype = "mutipair/form-data" }))
+{
+    <h2>Student Registration</h2>
+    <label for="exampleName">Name</label>
+    @Html.TextBoxFor(m => m.Name, new { placeholder = "Enter Your Name", @class = "form-control" })
+    <label for="exampleMaths">Maths</label>
+    @Html.TextBoxFor(m => m.Maths, new { placeholder = "Maths Mark", @class = "form-control" })
+    <label for="exampleChemistry">Chemistry</label>
+    @Html.TextBoxFor(m => m.Chemistry, new { placeholder = "Chemistry Mark", @class = "form-control" })
+    <label for="examplephysics">Physics</label>
+    @Html.TextBoxFor(m => m.Physics, new { placeholder = "Physics Mark",@class = "form-control" })
+    <label for="examplePhone">Phone</label>
+    @Html.TextBoxFor(m => m.PhoneNumber, new { placeholder = "Enter Your Phone Number" ,@class = "form-control" })
+    <label for="exampleemail">Email</label>
+    @Html.TextBoxFor(m => m.Email, new { placeholder = "Enter your Email", @class = "form-control" })
+    <label for="exampleaddress">Address</label>
+    @Html.TextBoxFor(m => m.Address, new { placeholder = "Enter Your Address", @class = "form-control" })<br />
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"> SAVE</button>
+    </div>
+}

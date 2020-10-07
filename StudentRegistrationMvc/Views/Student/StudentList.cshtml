@@ -1,0 +1,57 @@
+﻿@model List<StudentRegistrationMvc.Models.Student>
+@{
+    ViewBag.Title = "StudentList";
+}
+
+
+<h2>Data Saved Successfully  
+Created time @DateTime.Now.ToString();.......</h2>
+<h1>Student List</h1>
+<a href="https://mdbootstrap.com/docs/standard/layout/horizontal-alignment/"
+   target="_blank"></a>
+
+<head>
+
+
+    <style>
+         
+        /*h1{
+            text-align:center;
+        }*/
+        table, th, td {
+            border: 1px solid black;
+            /*border-collapse: collapse;*/
+        }
+
+            table.center {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<div>
+    <table>
+        <tr>
+            <th style="text-align:center">Id</th>
+            <th style="text-align:center">Name</th>
+            <th style="text-align:center">Total</th>
+            <th style="text-align:center">Email</th>
+            <th style="text-align:center">Phone</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+             <td> @item.Id</td>
+             <td>@item.Name</td>
+            <td>@item.Total</td>
+            <td>@item.Email</td>
+            <td>@item.PhoneNumber</td>
+             </tr>
+        }
+
+    </table>
+</div>
